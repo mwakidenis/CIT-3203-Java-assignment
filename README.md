@@ -199,3 +199,15 @@ apache-tomcat-8.5/webapps/
 Open browser:
 
 http://localhost:8080/jsp-servlet-jdbc-mysql-example/
+⚠ 11. Error Handling
+Area	Handling
+SQL Errors	printSQLException()
+Runtime Errors	error.jsp
+Invalid Requests	Safe redirects
+🎓 12. Learning Outcomes
+✔ MVC Architecture (Model-2)
+✔ DAO Pattern
+✔ JDBC CRUD Operations
+✔ JSP & Servlet Lifecycle
+✔ MySQL Integration
+✔ Tomcat Deployment
