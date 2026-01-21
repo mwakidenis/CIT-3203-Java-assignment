@@ -17,20 +17,21 @@
 
 ---
 
-## 📌 1. Project Overview
+## 📌 Project Overview
 
 The **User Management System** is a Java EE web application developed using **JSP, Servlets, JDBC, and MySQL**.  
-It demonstrates **full CRUD functionality (Create, Read, Update, Delete)** while strictly following the **MVC (Model–View–Controller)** architectural pattern.
+It demonstrates **full CRUD functionality (Create, Read, Update, Delete)** while strictly following the  
+**MVC (Model–View–Controller)** architectural pattern.
 
 This project is suitable for:
-- 🎓 University assignments
-- 💼 Java Web portfolios
-- 🧪 Learning JDBC & MVC
-- 🚀 Tomcat-based deployments
+- 🎓 University assignments  
+- 💼 Java Web portfolios  
+- 🧪 Learning JDBC & MVC  
+- 🚀 Tomcat-based deployments  
 
 ---
 
-## ✨ 2. Core Features
+## ✨ Core Features
 
 | Feature | Description |
 |---|---|
@@ -44,73 +45,56 @@ This project is suitable for:
 
 ---
 
-## 🏗 3. System Architecture (MVC – Correct)
+## 🏗 System Architecture (MVC)
 
-### 🔁 High-Level Architecture
+### High-Level Flow
 
-┌──────────────┐
-│ Browser │
-└──────┬───────┘
-│ HTTP Request
+Browser
+│
 ▼
-┌──────────────┐
-│ JSP Views │ ← Presentation Layer
-│ (UI / Forms) │
-└──────┬───────┘
-│ Forward / Redirect
+JSP Views (UI / Forms)
+│
 ▼
-┌──────────────┐
-│ Servlet │ ← Controller Layer
-│ UserServlet │
-└──────┬───────┘
-│ Method Calls
+Servlet Controller (UserServlet)
+│
 ▼
-┌──────────────┐
-│ DAO Layer │ ← Data Access Layer
-│ UserDAO │
-└──────┬───────┘
-│ JDBC
+DAO Layer (UserDAO)
+│
 ▼
-┌──────────────┐
-│ MySQL DB │ ← Persistence Layer
-│ users │
-└──────────────┘
+MySQL Database (users)
 
 
----
-
-### 🧩 MVC Responsibility Table
+### MVC Responsibility Mapping
 
 | Layer | Responsibility | Technology | Files |
 |---|---|---|---|
-| **View** | UI rendering | JSP, JSTL, Bootstrap | `user-list.jsp`, `user-form.jsp`, `error.jsp` |
-| **Controller** | Request handling | Servlet API | `UserServlet.java` |
-| **Model** | Data representation | JavaBean | `User.java` |
-| **DAO** | Database logic | JDBC | `UserDAO.java` |
-| **Database** | Persistent storage | MySQL | `users` table |
+| View | UI rendering | JSP, JSTL, Bootstrap | user-list.jsp, user-form.jsp |
+| Controller | Request handling | Servlet API | UserServlet.java |
+| Model | Data structure | JavaBean | User.java |
+| DAO | Database logic | JDBC | UserDAO.java |
+| Database | Persistent storage | MySQL | users table |
 
 ---
 
-## 🗄 4. Database Design (ERD)
+## 🗄 Database Design (ERD)
 
-### 📊 Entity Relationship Diagram (Textual)
+### Entity Structure
 
 USERS
-────────────────────────
-PK id INT
+id INT (PK)
 name VARCHAR
 email VARCHAR
 country VARCHAR
 
 
-### 📌 Notes
-- Single entity system
-- `id` is AUTO_INCREMENT primary key
-- No foreign keys (basic CRUD)
+**Notes**
+- Single-entity system
+- `id` is AUTO_INCREMENT
+- Designed for basic CRUD operations
 
 ---
 
-## 🛠 5. Technology Stack
+## 🛠 Technology Stack
 
 | Category | Technology |
 |---|---|
@@ -125,7 +109,7 @@ country VARCHAR
 
 ---
 
-## 📁 6. Project Structure
+## 📁 Project Structure
 
 jsp-servlet-jdbc-mysql-example/
 │
@@ -149,7 +133,7 @@ jsp-servlet-jdbc-mysql-example/
 
 ---
 
-## 🗃 7. Database Setup
+## 🗃 Database Setup
 
 ### Create Database
 ```sql
@@ -163,7 +147,7 @@ CREATE TABLE users (
   country VARCHAR(120),
   PRIMARY KEY (id)
 );
-🔄 8. Application Request Flow
+🔄 Application Request Flow
 Step	Action
 1	User sends request from browser
 2	JSP submits form
@@ -172,7 +156,7 @@ Step	Action
 5	MySQL returns result
 6	Servlet forwards response
 7	JSP renders output
-🌐 9. URL Mapping
+🌐 URL Mapping
 URL Pattern	Function
 /list	Display users
 /new	Show add form
@@ -180,7 +164,7 @@ URL Pattern	Function
 /edit	Edit user
 /update	Update user
 /delete	Delete user
-🚀 10. Deployment Steps
+🚀 Deployment Steps
 Prerequisites
 Java JDK 8+
 
@@ -199,3 +183,4 @@ apache-tomcat-8.5/webapps/
 Open browser:
 
 http://localhost:8080/jsp-servlet-jdbc-mysql-example/
+<div align="center">
