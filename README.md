@@ -42,14 +42,63 @@ This project strictly follows the **MVC (Model–View–Controller)** architectu
 ---
 
 ## 🏗 System Architecture (MVC)
+## 🏗 System Architecture (MVC)
 
-```mermaid
-flowchart LR
-    A[Browser] --> B[JSP Pages]
-    B --> C[UserServlet]
-    C --> D[UserDAO]
-    D --> E[(MySQL Database)]
+### Architecture Overview
 
+Browser
+|
+v
+JSP Views (UI Layer)
+|
+v
+Servlet Controller (UserServlet)
+|
+v
+DAO Layer (UserDAO)
+|
+v
+MySQL Database
+
+
+---
+
+### MVC Layer Mapping
+
+| Layer | Responsibility | Technology | Files |
+|---|---|---|---|
+| View | User Interface | JSP, JSTL, Bootstrap | user-list.jsp, user-form.jsp |
+| Controller | Request handling & routing | Servlet API | UserServlet.java |
+| Model | Data representation | Java Bean | User.java |
+| DAO | Database operations | JDBC | UserDAO.java |
+| Database | Persistent storage | MySQL | users table |
+
+---
+
+### Request Processing Flow
+
+| Step | Description |
+|---|---|
+| 1 | User sends HTTP request |
+| 2 | JSP submits request |
+| 3 | Servlet processes request |
+| 4 | DAO executes SQL |
+| 5 | MySQL returns data |
+| 6 | Servlet forwards response |
+| 7 | JSP renders result |
+
+---
+
+### Controller URL Mapping
+
+| URL | Action |
+|---|---|
+| `/list` | List users |
+| `/new` | Show add form |
+| `/insert` | Insert user |
+| `/edit` | Edit user |
+| `/update` | Update user |
+| `/delete` | Delete user |
 Architecture Mapping
 Layer	Component
 Model	User.java
