@@ -49,6 +49,7 @@ flowchart LR
     B --> C[UserServlet]
     C --> D[UserDAO]
     D --> E[(MySQL Database)]
+
 Architecture Mapping
 Layer	Component
 Model	User.java
@@ -63,7 +64,9 @@ erDiagram
         VARCHAR email
         VARCHAR country
     }
+
 ERD Explanation
+
 Single entity: USERS
 
 id is the Primary Key
@@ -101,10 +104,12 @@ jsp-servlet-jdbc-mysql-example/
 │   └── index.jsp
 │
 └── README.md
+
 🗄 Database Setup
 Create Database
 CREATE DATABASE demo;
 USE demo;
+
 Create Table
 CREATE TABLE users (
   id INT(3) NOT NULL AUTO_INCREMENT,
@@ -113,6 +118,7 @@ CREATE TABLE users (
   country VARCHAR(120),
   PRIMARY KEY (id)
 );
+
 🔄 Application Flow
 sequenceDiagram
     participant U as User
@@ -128,8 +134,10 @@ sequenceDiagram
     M-->>D: Result
     D-->>S: Data
     S-->>J: Forward Response
+
 🚀 Deployment & Execution
 Prerequisites
+
 Java JDK 8 or later
 
 MySQL Server
@@ -137,6 +145,7 @@ MySQL Server
 Apache Tomcat 8.5
 
 Steps
+
 Start MySQL Server
 
 Start Apache Tomcat
@@ -144,17 +153,45 @@ Start Apache Tomcat
 Copy project folder to:
 
 apache-tomcat-8.5/webapps/
+
+
 Open browser and visit:
 
 http://localhost:8080/jsp-servlet-jdbc-mysql-example/
+
 🖥 Application Pages
 Page	Purpose
 user-list.jsp	Displays all users
 user-form.jsp	Add / Edit user
 error.jsp	Displays runtime errors
 ⚠ Error Handling
+
 SQL exceptions handled via printSQLException()
 
 Centralized error display using error.jsp
 
 Safe redirects after CRUD actions
+
+🎓 Learning Outcomes
+
+✔ JSP & Servlet lifecycle
+✔ MVC architecture in Java EE
+✔ JDBC CRUD operations
+✔ DAO pattern
+✔ MySQL integration
+✔ Tomcat deployment
+
+📚 Credits & References
+
+Author: Ramesh Fadatare
+
+Platform: Java Guides
+
+GitHub Repository:
+https://github.com/RameshMF/jsp-servlet-jdbc-mysql-crud-tutorial
+
+<div align="center">
+
+⭐ If this project helped you learn Java Web Development, consider starring the repository.
+
+</div> ```
