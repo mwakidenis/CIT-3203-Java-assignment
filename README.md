@@ -1,164 +1,160 @@
 <div align="center">
 
-# 👤 JSP Servlet JDBC MySQL CRUD Application  
-### User Management System
+# 👤 USER MANAGEMENT SYSTEM  
+### JSP • Servlet • JDBC • MySQL CRUD Application
 
-<img src="https://img.shields.io/badge/Java-JDK%208+-orange?style=for-the-badge&logo=java"/>
-<img src="https://img.shields.io/badge/JSP-Servlets-blue?style=for-the-badge&logo=apachetomcat"/>
-<img src="https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql"/>
-<img src="https://img.shields.io/badge/Tomcat-8.5-yellow?style=for-the-badge&logo=apachetomcat"/>
+![Java](https://img.shields.io/badge/Java-JDK%208+-orange)
+![JSP](https://img.shields.io/badge/JSP-2.2-blue)
+![Servlet](https://img.shields.io/badge/Servlet-2.5-green)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-blue)
+![Tomcat](https://img.shields.io/badge/Tomcat-8.5-yellow)
+![MVC](https://img.shields.io/badge/Architecture-MVC-brightgreen)
 
-<br/>
-
-**A complete CRUD-based Java Web Application using JSP, Servlets, JDBC & MySQL**
+📘 **Academic-grade Java Web Application**  
+📦 **CRUD | MVC | DAO | JDBC | Tomcat Deployment**
 
 </div>
 
 ---
 
-## 📌 Project Overview
+## 📌 1. Project Overview
 
-The **User Management System** is a Java EE web application that demonstrates **Create, Read, Update, and Delete (CRUD)** operations using:
+The **User Management System** is a Java EE web application developed using **JSP, Servlets, JDBC, and MySQL**.  
+It demonstrates **full CRUD functionality (Create, Read, Update, Delete)** while strictly following the **MVC (Model–View–Controller)** architectural pattern.
 
-- **JSP** for presentation  
-- **Servlets** for request handling  
-- **JDBC** for database interaction  
-- **MySQL** for persistent data storage  
-
-This project strictly follows the **MVC (Model–View–Controller)** architectural pattern and is deployed on **Apache Tomcat 8.5**.
-
----
-
-## ✨ Features
-
-- ➕ Create a new user  
-- 📋 View all users  
-- ✏️ Update user details  
-- ❌ Delete a user  
-- 🧱 MVC architecture  
-- 🗃 DAO design pattern  
-- 🎨 Bootstrap-based UI  
+This project is suitable for:
+- 🎓 University assignments
+- 💼 Java Web portfolios
+- 🧪 Learning JDBC & MVC
+- 🚀 Tomcat-based deployments
 
 ---
 
-## 🏗 System Architecture (MVC)
-## 🏗 System Architecture (MVC)
+## ✨ 2. Core Features
 
-### Architecture Overview
+| Feature | Description |
+|---|---|
+| ➕ Create User | Add new users to the system |
+| 📋 View Users | Display all users in a table |
+| ✏️ Update User | Edit existing user details |
+| ❌ Delete User | Remove a user from database |
+| 🧱 MVC Pattern | Clean separation of concerns |
+| 🗃 DAO Pattern | Centralized DB access |
+| 🎨 UI Styling | Bootstrap 4 |
 
-Browser
-|
-v
-JSP Views (UI Layer)
-|
-v
-Servlet Controller (UserServlet)
-|
-v
-DAO Layer (UserDAO)
-|
-v
-MySQL Database
+---
+
+## 🏗 3. System Architecture (MVC – Correct)
+
+### 🔁 High-Level Architecture
+
+┌──────────────┐
+│ Browser │
+└──────┬───────┘
+│ HTTP Request
+▼
+┌──────────────┐
+│ JSP Views │ ← Presentation Layer
+│ (UI / Forms) │
+└──────┬───────┘
+│ Forward / Redirect
+▼
+┌──────────────┐
+│ Servlet │ ← Controller Layer
+│ UserServlet │
+└──────┬───────┘
+│ Method Calls
+▼
+┌──────────────┐
+│ DAO Layer │ ← Data Access Layer
+│ UserDAO │
+└──────┬───────┘
+│ JDBC
+▼
+┌──────────────┐
+│ MySQL DB │ ← Persistence Layer
+│ users │
+└──────────────┘
 
 
 ---
 
-### MVC Layer Mapping
+### 🧩 MVC Responsibility Table
 
 | Layer | Responsibility | Technology | Files |
 |---|---|---|---|
-| View | User Interface | JSP, JSTL, Bootstrap | user-list.jsp, user-form.jsp |
-| Controller | Request handling & routing | Servlet API | UserServlet.java |
-| Model | Data representation | Java Bean | User.java |
-| DAO | Database operations | JDBC | UserDAO.java |
-| Database | Persistent storage | MySQL | users table |
+| **View** | UI rendering | JSP, JSTL, Bootstrap | `user-list.jsp`, `user-form.jsp`, `error.jsp` |
+| **Controller** | Request handling | Servlet API | `UserServlet.java` |
+| **Model** | Data representation | JavaBean | `User.java` |
+| **DAO** | Database logic | JDBC | `UserDAO.java` |
+| **Database** | Persistent storage | MySQL | `users` table |
 
 ---
 
-### Request Processing Flow
+## 🗄 4. Database Design (ERD)
 
-| Step | Description |
-|---|---|
-| 1 | User sends HTTP request |
-| 2 | JSP submits request |
-| 3 | Servlet processes request |
-| 4 | DAO executes SQL |
-| 5 | MySQL returns data |
-| 6 | Servlet forwards response |
-| 7 | JSP renders result |
+### 📊 Entity Relationship Diagram (Textual)
+
+USERS
+────────────────────────
+PK id INT
+name VARCHAR
+email VARCHAR
+country VARCHAR
+
+
+### 📌 Notes
+- Single entity system
+- `id` is AUTO_INCREMENT primary key
+- No foreign keys (basic CRUD)
 
 ---
 
-### Controller URL Mapping
+## 🛠 5. Technology Stack
 
-| URL | Action |
+| Category | Technology |
 |---|---|
-| `/list` | List users |
-| `/new` | Show add form |
-| `/insert` | Insert user |
-| `/edit` | Edit user |
-| `/update` | Update user |
-| `/delete` | Delete user |
-Architecture Mapping
-Layer	Component
-Model	User.java
-View	user-list.jsp, user-form.jsp
-Controller	UserServlet.java
-Data Access	UserDAO.java
-🧩 Entity Relationship Diagram (ERD)
-erDiagram
-    USERS {
-        INT id PK
-        VARCHAR name
-        VARCHAR email
-        VARCHAR country
-    }
+| Language | Java (JDK 8+) |
+| Frontend | JSP 2.2, JSTL 1.2.1 |
+| Backend | Servlet API 2.5 |
+| Database | MySQL |
+| Data Access | JDBC 4.2 |
+| Server | Apache Tomcat 8.5 |
+| UI | Bootstrap 4 |
+| IDE | Eclipse / STS |
 
-ERD Explanation
+---
 
-Single entity: USERS
+## 📁 6. Project Structure
 
-id is the Primary Key
-
-Each row represents one user
-
-No foreign key relationships (single-table CRUD system)
-
-🛠 Technology Stack
-Layer	Technology
-Language	Java (JDK 8+)
-Frontend	JSP 2.2, JSTL 1.2.1
-Backend	Servlet API 2.5
-Database	MySQL
-Data Access	JDBC 4.2
-Server	Apache Tomcat 8.5
-UI	Bootstrap 4
-IDE	Eclipse / STS
-📁 Project Structure
 jsp-servlet-jdbc-mysql-example/
 │
 ├── src/
-│   └── net/javaguides/usermanagement/
-│       ├── dao/
-│       │   └── UserDAO.java
-│       ├── model/
-│       │   └── User.java
-│       └── web/
-│           └── UserServlet.java
+│ └── net/javaguides/usermanagement/
+│ ├── model/
+│ │ └── User.java
+│ ├── dao/
+│ │ └── UserDAO.java
+│ └── web/
+│ └── UserServlet.java
 │
 ├── WebContent/
-│   ├── user-list.jsp
-│   ├── user-form.jsp
-│   ├── error.jsp
-│   └── index.jsp
+│ ├── user-list.jsp
+│ ├── user-form.jsp
+│ ├── error.jsp
+│ └── index.jsp
 │
 └── README.md
 
-🗄 Database Setup
-Create Database
+
+---
+
+## 🗃 7. Database Setup
+
+### Create Database
+```sql
 CREATE DATABASE demo;
 USE demo;
-
 Create Table
 CREATE TABLE users (
   id INT(3) NOT NULL AUTO_INCREMENT,
@@ -167,80 +163,39 @@ CREATE TABLE users (
   country VARCHAR(120),
   PRIMARY KEY (id)
 );
-
-🔄 Application Flow
-sequenceDiagram
-    participant U as User
-    participant J as JSP
-    participant S as Servlet
-    participant D as DAO
-    participant M as MySQL
-
-    U->>J: Submit Request
-    J->>S: HTTP Request
-    S->>D: Call CRUD Method
-    D->>M: Execute SQL
-    M-->>D: Result
-    D-->>S: Data
-    S-->>J: Forward Response
-
-🚀 Deployment & Execution
+🔄 8. Application Request Flow
+Step	Action
+1	User sends request from browser
+2	JSP submits form
+3	Servlet processes request
+4	DAO executes SQL
+5	MySQL returns result
+6	Servlet forwards response
+7	JSP renders output
+🌐 9. URL Mapping
+URL Pattern	Function
+/list	Display users
+/new	Show add form
+/insert	Insert user
+/edit	Edit user
+/update	Update user
+/delete	Delete user
+🚀 10. Deployment Steps
 Prerequisites
-
-Java JDK 8 or later
+Java JDK 8+
 
 MySQL Server
 
 Apache Tomcat 8.5
 
-Steps
+Run Application
+Start MySQL server
 
-Start MySQL Server
+Start Tomcat
 
-Start Apache Tomcat
-
-Copy project folder to:
+Copy project to:
 
 apache-tomcat-8.5/webapps/
-
-
-Open browser and visit:
+Open browser:
 
 http://localhost:8080/jsp-servlet-jdbc-mysql-example/
-
-🖥 Application Pages
-Page	Purpose
-user-list.jsp	Displays all users
-user-form.jsp	Add / Edit user
-error.jsp	Displays runtime errors
-⚠ Error Handling
-
-SQL exceptions handled via printSQLException()
-
-Centralized error display using error.jsp
-
-Safe redirects after CRUD actions
-
-🎓 Learning Outcomes
-
-✔ JSP & Servlet lifecycle
-✔ MVC architecture in Java EE
-✔ JDBC CRUD operations
-✔ DAO pattern
-✔ MySQL integration
-✔ Tomcat deployment
-
-📚 Credits & References
-
-Author: Ramesh Fadatare
-
-Platform: Java Guides
-
-GitHub Repository:
-https://github.com/RameshMF/jsp-servlet-jdbc-mysql-crud-tutorial
-
-<div align="center">
-
-⭐ If this project helped you learn Java Web Development, consider starring the repository.
-
-</div> ```
