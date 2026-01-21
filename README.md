@@ -147,6 +147,9 @@ CREATE TABLE users (
   country VARCHAR(120),
   PRIMARY KEY (id)
 );
+
+---
+
 🔄 Application Request Flow
 Step	Action
 1	User sends request from browser
@@ -183,4 +186,4 @@ apache-tomcat-8.5/webapps/
 Open browser:
 
 http://localhost:8080/jsp-servlet-jdbc-mysql-example/
-<div align="center">
+
