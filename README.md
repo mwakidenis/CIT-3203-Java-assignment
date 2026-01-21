@@ -1,213 +1,254 @@
 <div align="center">
 
-# 👤 USER MANAGEMENT SYSTEM  
-### JSP • Servlet • JDBC • MySQL CRUD Application
+# 🏨 HOTEL MANAGEMENT SYSTEM  
+### Desktop Application | Java 11 | JDBC | MySQL
 
-![Java](https://img.shields.io/badge/Java-JDK%208+-orange)
-![JSP](https://img.shields.io/badge/JSP-2.2-blue)
-![Servlet](https://img.shields.io/badge/Servlet-2.5-green)
+![Java](https://img.shields.io/badge/Java-11-orange)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-blue)
-![Tomcat](https://img.shields.io/badge/Tomcat-8.5-yellow)
-![MVC](https://img.shields.io/badge/Architecture-MVC-brightgreen)
-
-📘 **Academic-grade Java Web Application**  
-📦 **CRUD | MVC | DAO | JDBC | Tomcat Deployment**
+![JDBC](https://img.shields.io/badge/JDBC-4.2-green)
+![Desktop App](https://img.shields.io/badge/Application-Desktop-lightgrey)
+![Status](https://img.shields.io/badge/Status-Stable-brightgreen)
 
 </div>
 
 ---
 
-## 📌 1. Project Overview
+## ═══════════════════════════════════════════
+## 1. PROJECT OVERVIEW
+## ═══════════════════════════════════════════
 
-The **User Management System** is a Java EE web application developed using **JSP, Servlets, JDBC, and MySQL**.  
-It demonstrates **full CRUD functionality (Create, Read, Update, Delete)** while strictly following the **MVC (Model–View–Controller)** architectural pattern.
+The **Hotel Management System** is a **Java desktop-based application** designed to automate and manage hotel operations such as:
 
-This project is suitable for:
-- 🎓 University assignments
-- 💼 Java Web portfolios
-- 🧪 Learning JDBC & MVC
-- 🚀 Tomcat-based deployments
+- Room management  
+- Employee management  
+- Customer records  
+- Driver allocation  
 
----
-
-## ✨ 2. Core Features
-
-| Feature | Description |
-|---|---|
-| ➕ Create User | Add new users to the system |
-| 📋 View Users | Display all users in a table |
-| ✏️ Update User | Edit existing user details |
-| ❌ Delete User | Remove a user from database |
-| 🧱 MVC Pattern | Clean separation of concerns |
-| 🗃 DAO Pattern | Centralized DB access |
-| 🎨 UI Styling | Bootstrap 4 |
+The system is developed using **Java 11**, **JDBC**, and **MySQL**, providing a reliable and scalable solution for small to medium-sized hotels.
 
 ---
 
-## 🏗 3. System Architecture (MVC – Correct)
+## ═══════════════════════════════════════════
+## 2. PROJECT OBJECTIVES
+## ═══════════════════════════════════════════
 
-### 🔁 High-Level Architecture
+| Objective | Description |
+|---------|-------------|
+| Automation | Reduce manual hotel record keeping |
+| Accuracy | Improve data consistency |
+| Efficiency | Speed up hotel operations |
+| Learning | Demonstrate real-world Java development |
 
-┌──────────────┐
-│ Browser │
-└──────┬───────┘
-│ HTTP Request
-▼
-┌──────────────┐
-│ JSP Views │ ← Presentation Layer
-│ (UI / Forms) │
-└──────┬───────┘
-│ Forward / Redirect
-▼
-┌──────────────┐
-│ Servlet │ ← Controller Layer
-│ UserServlet │
-└──────┬───────┘
-│ Method Calls
-▼
-┌──────────────┐
-│ DAO Layer │ ← Data Access Layer
-│ UserDAO │
-└──────┬───────┘
-│ JDBC
-▼
-┌──────────────┐
-│ MySQL DB │ ← Persistence Layer
-│ users │
-└──────────────┘
+---
+
+## ═══════════════════════════════════════════
+## 3. SYSTEM FEATURES
+## ═══════════════════════════════════════════
+
+| Module | Description |
+|------|-------------|
+| 🛏 Room Management | Add, update, view hotel rooms |
+| 👨‍💼 Employee Management | Manage staff records |
+| 🚗 Driver Management | Assign and track drivers |
+| 👤 Customer Management | Handle guest information |
+| 🔐 Authentication | Secure login system |
+| 🖥 Desktop UI | Java Swing-based interface |
+
+---
+
+## ═══════════════════════════════════════════
+## 4. SYSTEM ARCHITECTURE
+## ═══════════════════════════════════════════
+
+### 4.1 Architectural Pattern
+
+The system follows a **Layered Architecture** with clear separation between:
+
+- Presentation Layer  
+- Business Logic Layer  
+- Data Access Layer  
+- Database Layer  
+
+---
+
+### 4.2 High-Level Architecture Diagram
+
+┌─────────────────────┐
+│ User Interface │
+│ (Java Swing) │
+└──────────┬──────────┘
+│
+┌──────────▼──────────┐
+│ Business Logic Layer│
+│ (Controllers) │
+└──────────┬──────────┘
+│
+┌──────────▼──────────┐
+│ Data Access Layer │
+│ (JDBC / DAO) │
+└──────────┬──────────┘
+│
+┌──────────▼──────────┐
+│ MySQL Database │
+└─────────────────────┘
 
 
 ---
 
-### 🧩 MVC Responsibility Table
+### 4.3 Layer Responsibility Table
 
-| Layer | Responsibility | Technology | Files |
-|---|---|---|---|
-| **View** | UI rendering | JSP, JSTL, Bootstrap | `user-list.jsp`, `user-form.jsp`, `error.jsp` |
-| **Controller** | Request handling | Servlet API | `UserServlet.java` |
-| **Model** | Data representation | JavaBean | `User.java` |
-| **DAO** | Database logic | JDBC | `UserDAO.java` |
-| **Database** | Persistent storage | MySQL | `users` table |
-
----
-
-## 🗄 4. Database Design (ERD)
-
-### 📊 Entity Relationship Diagram (Textual)
-
-USERS
-────────────────────────
-PK id INT
-name VARCHAR
-email VARCHAR
-country VARCHAR
-
-
-### 📌 Notes
-- Single entity system
-- `id` is AUTO_INCREMENT primary key
-- No foreign keys (basic CRUD)
+| Layer | Responsibility | Technology |
+|-----|----------------|------------|
+| Presentation | User interaction | Java Swing |
+| Business Logic | System rules | Java |
+| Data Access | DB communication | JDBC |
+| Database | Data storage | MySQL |
 
 ---
 
-## 🛠 5. Technology Stack
+## ═══════════════════════════════════════════
+## 5. DATABASE DESIGN
+## ═══════════════════════════════════════════
+
+### 5.1 Entity Relationship Diagram (Textual)
+
+CUSTOMER ─────┐
+ROOM ─────┼── HOTEL DATABASE
+EMPLOYEE ─────┤
+DRIVER ─────┘
+
+
+---
+
+### 5.2 Core Tables
+
+| Table | Description |
+|------|-------------|
+| customer | Stores customer details |
+| room | Stores room information |
+| employee | Stores staff records |
+| driver | Stores driver details |
+
+---
+
+## ═══════════════════════════════════════════
+## 6. TECHNOLOGY STACK
+## ═══════════════════════════════════════════
 
 | Category | Technology |
-|---|---|
-| Language | Java (JDK 8+) |
-| Frontend | JSP 2.2, JSTL 1.2.1 |
-| Backend | Servlet API 2.5 |
+|--------|------------|
+| Programming Language | Java 11 |
+| UI Framework | Java Swing |
 | Database | MySQL |
-| Data Access | JDBC 4.2 |
-| Server | Apache Tomcat 8.5 |
-| UI | Bootstrap 4 |
-| IDE | Eclipse / STS |
+| Data Access | JDBC |
+| Build Tool | Apache Ant |
+| IDE | NetBeans / IntelliJ |
 
 ---
 
-## 📁 6. Project Structure
+## ═══════════════════════════════════════════
+## 7. PROJECT STRUCTURE
+## ═══════════════════════════════════════════
 
-jsp-servlet-jdbc-mysql-example/
+Hotel-Management-System/
 │
 ├── src/
-│ └── net/javaguides/usermanagement/
-│ ├── model/
-│ │ └── User.java
-│ ├── dao/
-│ │ └── UserDAO.java
-│ └── web/
-│ └── UserServlet.java
+│ └── hotel/
+│ ├── management/
+│ │ ├── HotelManagementSystem.java
+│ │ ├── Login.java
+│ │ ├── Dashboard.java
+│ │ └── modules/
+│ └── db/
+│ └── DatabaseConnection.java
 │
-├── WebContent/
-│ ├── user-list.jsp
-│ ├── user-form.jsp
-│ ├── error.jsp
-│ └── index.jsp
-│
+├── nbproject/
+├── build.xml
+├── manifest.mf
 └── README.md
 
 
 ---
 
-## 🗃 7. Database Setup
+## ═══════════════════════════════════════════
+## 8. INSTALLATION & SETUP
+## ═══════════════════════════════════════════
 
-### Create Database
-```sql
-CREATE DATABASE demo;
-USE demo;
-Create Table
-CREATE TABLE users (
-  id INT(3) NOT NULL AUTO_INCREMENT,
-  name VARCHAR(120) NOT NULL,
-  email VARCHAR(220) NOT NULL,
-  country VARCHAR(120),
-  PRIMARY KEY (id)
-);
-🔄 8. Application Request Flow
-Step	Action
-1	User sends request from browser
-2	JSP submits form
-3	Servlet processes request
-4	DAO executes SQL
-5	MySQL returns result
-6	Servlet forwards response
-7	JSP renders output
-🌐 9. URL Mapping
-URL Pattern	Function
-/list	Display users
-/new	Show add form
-/insert	Insert user
-/edit	Edit user
-/update	Update user
-/delete	Delete user
-🚀 10. Deployment Steps
-Prerequisites
-Java JDK 8+
+### 8.1 Prerequisites
 
-MySQL Server
+- Java JDK 11
+- MySQL Server
+- NetBeans IDE
 
-Apache Tomcat 8.5
+---
 
-Run Application
-Start MySQL server
+### 8.2 Installation Steps
 
-Start Tomcat
+1. Clone the repository  
+git clone https://github.com/mwakidenis/Hotel-Management-System.git
 
-Copy project to:
+2. Open project in NetBeans  
+3. Import MySQL database (`src/hotel/mysql_command.txt`)  
+4. Add required JARs to classpath  
+5. Run `HotelManagementSystem.java`
 
-apache-tomcat-8.5/webapps/
-Open browser:
+---
 
-http://localhost:8080/jsp-servlet-jdbc-mysql-example/
-⚠ 11. Error Handling
-Area	Handling
-SQL Errors	printSQLException()
-Runtime Errors	error.jsp
-Invalid Requests	Safe redirects
-🎓 12. Learning Outcomes
-✔ MVC Architecture (Model-2)
-✔ DAO Pattern
-✔ JDBC CRUD Operations
-✔ JSP & Servlet Lifecycle
-✔ MySQL Integration
-✔ Tomcat Deployment
+## ═══════════════════════════════════════════
+## 9. DEFAULT LOGIN CREDENTIALS
+## ═══════════════════════════════════════════
+
+| Field | Value |
+|-----|------|
+| Username | `admin` |
+| Password | `12345` |
+
+---
+
+## ═══════════════════════════════════════════
+## 10. SCREENSHOTS
+## ═══════════════════════════════════════════
+
+| Page | Preview |
+|----|---------|
+| Landing Page | Screenshot |
+| Login Page | Screenshot |
+| Dashboard | Screenshot |
+
+---
+
+## ═══════════════════════════════════════════
+## 11. CONTRIBUTING
+## ═══════════════════════════════════════════
+
+Contributions are welcome.
+
+- Fork the repository  
+- Create a feature branch  
+- Submit a pull request  
+
+---
+
+## ═══════════════════════════════════════════
+## 12. SOURCE & CREDITS
+## ═══════════════════════════════════════════
+
+- **Adapted From:**  
+*UDEMY – 45 Real World Java Development Projects Bootcamp*
+
+- **Project Author:**  
+Engineering.Org.In
+
+- **Last Updated:**  
+September 2022
+
+---
+
+<div align="center">
+
+📘 **Professional Academic Documentation**  
+✔ Clear Sections  
+✔ GitHub Compatible  
+✔ University-Ready  
+
+</div>
